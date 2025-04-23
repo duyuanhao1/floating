@@ -34,7 +34,7 @@ prob_matrix_y3=[0.2/8,0.2/8,0.2/8,0.2/8,0.2,0.2/8,0.2/8,0.2/8,0.2/8]';
  load DD31_1.mat;
  load DD32_1.mat;
  load DD33_1.mat;
-% % 调用函数计算尾流影响
+%
 % DD1_1 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y1);%y1风机平台对y2风机平台的尾流影响
 % DD1_2 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y2);
 % DD1_3 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y3);
@@ -47,8 +47,8 @@ prob_matrix_y3=[0.2/8,0.2/8,0.2/8,0.2/8,0.2,0.2/8,0.2/8,0.2/8,0.2/8]';
 % DD3_2 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y2);
 % DD3_3 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y3);
 
-I = size(address, 1); % I为将要选取的地址的离散集合,格式为address(x1 y1;x2 y2...）
-D = size(wind, 1); % D为风的离散集合,格式为wind(v1 ang1 p1;v2 ang2 p2;.....），角度为与正北方向按顺时针计算的角度大小
+I = size(address, 1);
+D = size(wind, 1); 
 
 vv1_1 = 1 - DD1_1;  % vv为对应的速度比例
 vv1_2 = 1 - DD1_2;
@@ -70,9 +70,9 @@ loss_num3_1 = 1 - vv3_1.^3;
 loss_num3_2 = 1 - vv3_2.^3;
 loss_num3_3 = 1 - vv3_3.^3;
 
-y1 = binvar(size(address, 1), 1, 'full'); % 半潜   50
-y2 = binvar(size(address, 1), 1, 'full'); % 张力腿 0
-y3 = binvar(size(address, 1), 1, 'full'); % 立柱   100
+y1 = binvar(size(address, 1), 1, 'full'); % 半潜  
+y2 = binvar(size(address, 1), 1, 'full'); % 张力腿 
+y3 = binvar(size(address, 1), 1, 'full'); % 立柱 
 p = sdpvar(size(address, 1), size(wind, 1), 'full');
 
 %% 添加约束
