@@ -25,27 +25,27 @@ prob_matrix_y2=[0,0,0,0,1,0,0,0,0]';
 % prob_matrix_y2 = prob_matrix_y2 / sum(prob_matrix_y2); % 归一化
 prob_matrix_y3=[0.2/8,0.2/8,0.2/8,0.2/8,0.2,0.2/8,0.2/8,0.2/8,0.2/8]';
 % prob_matrix_y3 = prob_matrix_y3 / sum(prob_matrix_y3); % 归一化
- load DD11_1.mat;
- load DD12_1.mat;
- load DD13_1.mat;
- load DD21_1.mat;
- load DD22_1.mat;
- load DD23_1.mat;
- load DD31_1.mat;
- load DD32_1.mat;
- load DD33_1.mat;
+% load DD11_1.mat;
+% load DD12_1.mat;
+% load DD13_1.mat;
+% load DD21_1.mat;
+% load DD22_1.mat;
+% load DD23_1.mat;
+% load DD31_1.mat;
+% load DD32_1.mat;
+% load DD33_1.mat;
 %
-% DD1_1 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y1);%y1风机平台对y2风机平台的尾流影响
-% DD1_2 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y2);
-% DD1_3 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y3);
-% 
-% DD2_1 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y1);
-% DD2_2 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y2);
-% DD2_3 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y3);
-% 
-% DD3_1 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y1);
-% DD3_2 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y2);
-% DD3_3 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y3);
+DD1_1 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y1);%y1风机平台对y2风机平台的尾流影响
+DD1_2 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y2);
+DD1_3 = calculate_wake_effect_3(address, wind, prob_matrix_y1,prob_matrix_y3);
+ 
+DD2_1 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y1);
+DD2_2 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y2);
+DD2_3 = calculate_wake_effect_3(address, wind, prob_matrix_y2,prob_matrix_y3);
+ 
+DD3_1 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y1);
+DD3_2 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y2);
+DD3_3 = calculate_wake_effect_3(address, wind, prob_matrix_y3,prob_matrix_y3);
 
 I = size(address, 1);
 D = size(wind, 1); 
